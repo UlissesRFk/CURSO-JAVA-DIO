@@ -1,6 +1,6 @@
 package edu.Ulisses.TiposVariaveis;
 
-public class exemploDois {
+public class exemplo02 {
     public static void main(String[] args){
         int numero = - 5;
         System.out.println("Unários: " + ++ numero);
