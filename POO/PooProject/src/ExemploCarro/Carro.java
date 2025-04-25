@@ -10,9 +10,7 @@ public class Carro extends Veiculo{
         ConferirCambio();
         System.out.println("Carro ligado!");}
         else
-        System.out.println("O tanque esta vazio");
-       
-        
+        System.out.println("O tanque esta vazio"); 
     }
     
     private void ConferirCambio(){
