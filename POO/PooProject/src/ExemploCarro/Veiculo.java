@@ -9,4 +9,5 @@ public abstract class Veiculo {
         this.placa = placa;
     }
     public abstract void ligar();
+
 }
