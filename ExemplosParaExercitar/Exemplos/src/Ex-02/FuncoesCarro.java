@@ -1,7 +1,10 @@
+import java.util.Scanner;
+
 public class FuncoesCarro {
     private boolean ligado = false;
     private int marcha = 0;
     private double velocidade = 0;
+    
 
     public void setLigado(boolean ligado){
         this.ligado = ligado;
@@ -22,108 +25,95 @@ public class FuncoesCarro {
         return velocidade;
     }
 
-    public void LigarCarro(){
-        ligado = true;  
+    void LigarCarro(){
+        this.ligado = true;  
+        this.velocidade = 10;
         System.out.println(" \nO carro foi ligado");      
     }
-    public void DesligarCarro(){
+    void DesligarCarro(){
         if (!ligado) {
             System.out.println("O carro ja esta desligado");
             return;
         }
-        if(velocidade == 0 && marcha == 0);
+        if(velocidade == 0 && marcha == 0){
+        setLigado(false);
         System.out.println("Carro desligado");
     }
-    public void DiminuirVelocidade(){
-        this.velocidade = velocidade;
+    }
+    void DiminuirVelocidade(){
         if (!ligado) {
             System.out.println("Você precisa ligar o carro antes para realizar essa função.");
             return;
         }
-        velocidade--;
+        if(velocidade > 0)
+        velocidade --;
+        else
+        System.out.println("A velocidade ja esta zerada");
         System.out.println("Agora a sua velocidade é: " + velocidade);
     }
-    public void VirarEsquerda(){
+    void VirarEsquerda(){
         if (!ligado) {
             System.out.println("Você precisa ligar o carro antes para realizar essa função.");
             return;
         }
-        if(velocidade == 1 && velocidade <= 40){
+        if(velocidade > 0 && velocidade <= 40){
             System.out.println("Você virou a esquerda");
-        }else
+        }else if (velocidade == 0)
+        System.out.println("Sua velocidade esta zerada");
+        else
         System.out.println("Sua velocidade esta muito alta");
     }
-    public void VirarDireita(){
+    void VirarDireita(){
         if (!ligado) {
             System.out.println("Você precisa ligar o carro antes para realizar essa função.");
             return;
         }
-        if(velocidade == 1 && velocidade <= 40){
-            System.out.println("Você virpu a direita");
-        }else
+        if(velocidade > 0 && velocidade <= 40){
+            System.out.println("Você virou a direita");
+        }else if (velocidade == 0)
+        System.out.println("Sua velocidade esta zerada");
+        else
         System.out.println("Sua velocidade esta muito alta");
     };
-    public void VerificarVelocidade(){
+    void VerificarVelocidade(){
         if (!ligado) {
             System.out.println("Você precisa ligar o carro antes para realizar essa função.");
             return;
         }
        System.out.println("Sua velocidade é: " + velocidade);
     }
-    public void TrocarMarcha(double velocidade){
-        this.velocidade = velocidade;
+    void TrocarMarcha(){
+        Scanner valorMarcha = new Scanner(System.in);
         if (!ligado) {
             System.out.println("Você precisa ligar o carro antes para realizar essa função.");
             return;
         }
-        if(velocidade == 0)
-            marcha = 0;
-        else if(velocidade > 0 && velocidade <= 20)
-            marcha = 1;
-        else if(velocidade > 20 && velocidade <= 40)
-            marcha = 2;
-        else if(velocidade > 40 && velocidade <= 60)
-            marcha = 3;
-        else if(velocidade > 60 && velocidade <= 80)
-            marcha = 4;
-        else if(velocidade > 80 && velocidade <= 100)
-            marcha = 5;
-        else if(velocidade > 100 && velocidade <= 120)
-            marcha = 6;
-
-        switch (marcha) {
-            case 0:
-                System.out.println("Seu carro esta no ponto morto");
-                break;
-
-            case 1:
-            System.out.println("Sua velocidade pode estar entre 0km e 20km");
-            break;
-
-            case 2:
-            System.out.println("Sua velocidade pode estar entre 21km e 40km");
-            break;
-
-            case 3:
-            System.out.println("Sua velocidade pode estar entre 41km e 60km");
-            break;
-
-            case 4:
-            System.out.println("Sua velocidade pode estar entre 61km e 80km");
-            break;
-
-            case 5:
-            System.out.println("Sua velocidade pode estar entre 81km e 100km");
-            break;
-
-            case 6:
-            System.out.println("Sua velocidade pode estar entre 101km e 120km");
-            break;
-
-        }
+        System.out.println("Digite a marcha que será passada: ");
+        int marchaPassada = valorMarcha.nextInt();
+        if(marchaPassada == 0){
+            this.marcha = 0;
+            System.out.println("Seu carro esta no ponto morto");}
+        else if(marchaPassada == 1 && velocidade > 0 && velocidade <= 20){
+            this.marcha = 1;
+            System.out.println("Marcha um passada");}
+        else if(marchaPassada == 2 && velocidade > 20 && velocidade <= 40){
+            this.marcha = 2;
+            System.out.println("Marcha dois passada");}
+        else if(marchaPassada == 3 && velocidade > 40 && velocidade <= 60){
+            this.marcha = 3;
+            System.out.println("Marcha três passada");}
+        else if(marchaPassada == 4 && velocidade > 60 && velocidade <= 80){
+            this.marcha = 4;
+            System.out.println("Marcha quatro passada");}
+        else if(marchaPassada == 5 && velocidade > 80 && velocidade <= 100){
+            this.marcha = 5;
+            System.out.println("Marcha cinco passada");}
+        else if(marchaPassada == 6 && velocidade > 100 && velocidade <= 120){
+            this.marcha = 6;
+            System.out.println("Marcha seis passada");}
     }
-    public void Acelerar(){
-        this.velocidade = velocidade;
+
+    void Acelerar(){
         if (!ligado) {
             System.out.println("Você precisa ligar o carro antes para realizar essa função.");
             return;
@@ -131,8 +121,8 @@ public class FuncoesCarro {
         if(marcha == 0)
         System.out.println("O carro esta no peso morto");
         else{
-        velocidade++;
-        System.out.println("Sua velocidade é: " + velocidade);
+        this.velocidade++;
+        System.out.println("Sua velocidade é: " + this.velocidade);
     }
 
     }
