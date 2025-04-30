@@ -15,7 +15,6 @@ public class Carro extends FuncoesCarro{
         System.out.println("06 - Acelerar");
         System.out.println("07 - Diminuir velocidade");
         System.out.println("08 - Desligar Carro");
-        System.out.println("00 - Sair");
         System.out.println("=================");
         numeroEscolhido = escolher.nextInt();     
         
