@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class IngressoFamilia extends Ingresso {
+final class IngressoFamilia extends Ingresso {
 
   double novoValor;
 

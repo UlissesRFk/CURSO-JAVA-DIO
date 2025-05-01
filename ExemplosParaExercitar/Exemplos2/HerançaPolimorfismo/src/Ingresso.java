@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ingresso {
+sealed public class Ingresso permits IngressoFamilia, IngressoMeia {
     private double valor = 20;
     private String fala;
     private String nome;

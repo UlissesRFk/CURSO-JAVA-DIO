@@ -1,4 +1,4 @@
-public class IngressoMeia extends Ingresso {
+final class IngressoMeia extends Ingresso {
     double novoValor;
 
     public void ValorIngressoMeia() {
