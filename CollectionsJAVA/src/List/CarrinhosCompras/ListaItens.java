@@ -23,15 +23,16 @@ public class ListaItens {
           if(l.getNome().equalsIgnoreCase(nome)){
             removerItemNome.add(l);
           }
-          this.itensLista.removeAll(removerItemNome);
         }
+        this.itensLista.removeAll(removerItemNome);
     }
 
     public void calcularValorTotal(){
+        double valorTotal  = 0;
         for(Itens l : this.itensLista){
-           double valorItem = l.getPreco() * l.getQuantidade();
-           System.out.println("Valor total é de: " + valorItem);
+            valorTotal += l.getPreco() * l.getQuantidade();
         }
+        System.out.println("Valor total é de: " + valorTotal);
 
        
     }
@@ -48,8 +49,11 @@ public class ListaItens {
     public static void main(String[] args) {
         ListaItens listaItens = new ListaItens();
 
-        listaItens.adicionarItem("Mamão", 40.00, 0);
+        listaItens.adicionarItem("Mamão", 40.00, 2);
+        listaItens.adicionarItem("Mamão", 20.00, 2);
+        listaItens.adicionarItem("Mamão", 50.00, 4);
         listaItens.exibirItens();
+        listaItens.calcularValorTotal();
     }
 }
 
