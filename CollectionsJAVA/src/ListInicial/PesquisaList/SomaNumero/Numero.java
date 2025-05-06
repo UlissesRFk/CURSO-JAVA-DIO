@@ -1,4 +1,4 @@
-package PesquisaList.SomaNumero;
+package ListInicial.PesquisaList.SomaNumero;
 
 public class Numero{
  

@@ -1,4 +1,4 @@
-package OrdenList.OrdenPeople;
+package ListInicial.OrdenList.OrdenPeople;
 
 import java.util.Comparator;
 

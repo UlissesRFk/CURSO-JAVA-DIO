@@ -1,4 +1,4 @@
-package OrdenList.OrdenNumber;
+package ListInicial.OrdenList.OrdenNumber;
 
 public class Number implements Comparable<Number>{
     private int number;

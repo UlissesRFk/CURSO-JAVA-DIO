@@ -1,4 +1,4 @@
-package PesquisaList.SomaNumero;
+package ListInicial.PesquisaList.SomaNumero;
 
 import java.util.ArrayList;
 import java.util.List;

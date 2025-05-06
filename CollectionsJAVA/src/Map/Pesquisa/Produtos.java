@@ -1,11 +1,11 @@
-package List.CarrinhosCompras;
+package Map.Pesquisa;
 
-public class Itens {
-    private String nome; 
+public class Produtos {
+    private String nome;
     private double preco;
     private int quantidade;
 
-    public Itens(String nome, double preco, int quantidade) {
+    public Produtos(String nome, double preco, int quantidade){
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
@@ -14,16 +14,14 @@ public class Itens {
     public String getNome() {
         return nome;
     }
-
     public double getPreco() {
         return preco;
     }
-
     public int getQuantidade() {
         return quantidade;
     }
-
+    @Override
     public String toString() {
-        return "Item{nome='" + this.nome + ", preco=" + this.preco + ", quant=" + this.quantidade + "}\n";
-     }
+        return "\n{ " + nome + ", " + preco + ", " + quantidade + " }";
+    }
 }
